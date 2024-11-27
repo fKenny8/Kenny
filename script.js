@@ -10,11 +10,16 @@ let currentUserIndex = 0; // Indice dell'utente corrente
 // Gestione registrazione utenti
 document.getElementById("registration-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    const userName = document.getElementById("user-name").value;
-    const teamName = document.getElementById("team-name").value;
+    const userName = document.getElementById("user-name").value.trim();
+    const teamName = document.getElementById("team-name").value.trim();
 
     if (users.length >= 8) {
         alert("Massimo 8 utenti registrati!");
+        return;
+    }
+
+    if (!userName || !teamName) {
+        alert("Inserisci sia il nome utente che il nome della squadra!");
         return;
     }
 
@@ -61,7 +66,7 @@ function updateItemSelection() {
         const button = document.createElement("button");
         button.textContent = item;
 
-        // Imposta lo stato dei pulsanti
+        // Stato iniziale dei pulsanti
         if (user.items.includes(item)) {
             button.classList.add("selected");
         }
