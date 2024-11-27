@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantacalcio Random</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fantacalcio Random</h1>
+        <p>Crea la tua squadra e sfida gli altri utenti!</p>
+    </header>
+
+    <main id="game">
+        <section id="registration">
+            <h2>Registrazione Utenti</h2>
+            <form id="registration-form">
+                <label for="user-name">Nome Utente:</label>
+                <input type="text" id="user-name" required>
+                <label for="team-name">Nome Squadra:</label>
+                <input type="text" id="team-name" required>
+                <button type="submit">Registra</button>
+            </form>
+            <div id="user-list">
+                <h3>Utenti Registrati:</h3>
+                <ul></ul>
+            </div>
+        </section>
+
+        <section id="item-selection" style="display: none;">
+            <h2>Seleziona gli Item</h2>
+            <div id="items">
+                <!-- Gli item saranno generati dinamicamente -->
+            </div>
+            <button id="confirm-items">Conferma Squadra</button>
+        </section>
+
+        <section id="scoreboard" style="display: none;">
+            <h2>Classifica</h2>
+            <button id="generate-scores">Genera Punteggi</button>
+            <div id="results"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
